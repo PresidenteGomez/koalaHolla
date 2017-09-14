@@ -30,7 +30,22 @@ function getKoalas(){
     url: '/koalas',
     type: 'GET',
     success: function( data ){
+      var $tBody = $('#viewKoalas');
       console.log( 'got some koalas: ', data );
+      for (var i = 0; i< data.length; i++) {
+        var koala = data[i];
+        var $tRow = $('<tr>');
+
+        $tRow.append('<td>' + koala.name + '</td>');
+        $tRow.append('<td>' + koala.age + '</td>');
+        $tRow.append('<td>' + koala.gender + '</td>');
+        $tRow.append('<td>' + koala.readyForTransfer + '</td>');
+        $tRow.append('<td>' + koala.notes + '</td>');
+
+        $tBody.append($tRow);
+
+      }
+
     } // end success
   }); //end ajax
   // display on DOM with buttons that allow edit of each

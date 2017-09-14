@@ -32,3 +32,4 @@ router.post('/', function (req, res) {
 });
 
 module.exports = router;
+console.log('going to the party, bitches!');
